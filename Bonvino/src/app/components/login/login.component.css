@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: url(../../../assets/imagenes/ejemplo\ login\ 3.jpg) no-repeat;
+    background: url(../../../assets/imagenes/login/Fondo\ login.png) no-repeat;
     height: 100vh;
     font-family: sans-serif;
     background-size: cover;
@@ -43,7 +43,7 @@ body {
   h3 {
     margin: 0;
     padding: 0 0 20px;
-    color: #FF7500;
+    color: #993b58;
     text-align: center;
   }
   
@@ -55,7 +55,7 @@ body {
   .loginBox input[type="text"],
   .loginBox input[type="password"] {
     border: none;
-    border-bottom: 2px solid #FC6400;
+    border-bottom: 2px solid #993b58;
     outline: none;
     height: 40px;
     color: #fff;
@@ -67,8 +67,8 @@ body {
   
   .loginBox input[type="text"]:hover,
   .loginBox input[type="password"]:hover {
-    color: #FF7500;
-    border: 1px solid #FF7500;
+    color: #993b58;
+    border: 1px solid #993b58;
     box-shadow: 0 0 5px rgba(255, 72, 0, 0.842),
                 0 0 10px rgba(255, 102, 0, 0.2),
                 0 0 15px rgba(255, 94, 0, 0.1),
@@ -77,7 +77,7 @@ body {
   
   .loginBox input[type="text"]:focus,
   .loginBox input[type="password"]:focus {
-    border-bottom: 2px solid #FF7500;
+    border-bottom: 2px solid #993b58;
   }
   
   .inputBox {
@@ -95,7 +95,7 @@ body {
     outline: none;
     height: 40px;
     font-size: 16px;
-    background: #FF7500;
+    background: #993b58;
     color: #fff;
     border-radius: 20px;
     cursor: pointer;
