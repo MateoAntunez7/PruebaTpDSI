@@ -10,6 +10,8 @@
     display: flex;
     flex-direction: row;
     gap: 15px;
+    justify-content: center;
+    margin-bottom: 25px;
   }
   
   .cards .red {
@@ -24,7 +26,7 @@
     background-color: #22c55e;
   }
   .cards .yellow {
-    background-color: #fbff00;
+    background-color: #ff7b00;
   }
   
   .cards .card {
