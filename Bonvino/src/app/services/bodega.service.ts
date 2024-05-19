@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class BodegaService {
 
-  private url = 'assets/bodegas.json';
+  private url = '../../assets/json para consumir/vinos.JSON';
 
   constructor(private http: HttpClient) { }
 
-  obtenerBodegas(): Observable<any> {
+  getBodegas(): Observable<any> { // Corrección del nombre del método
     return this.http.get<any>(this.url);
   }
 }

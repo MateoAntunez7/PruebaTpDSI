@@ -11,18 +11,6 @@
         ]
       }
     ]
-  },
-  {
-    "id": 2,
-    "nombre": "Bodega B",
-    "actualizaciones": [
-      {
-        "fecha": "2024-04-15",
-        "vinos": [
-          {"nombre": "Vino B1", "tipo": "Rosado", "añada": 2019, "precioARS": 550, "notaDeCataBodega": "Vino B1 es un vino rosado afrutado y suave."},
-          {"nombre": "Vino B2", "tipo": "Tinto", "añada": 2020, "precioARS": 600, "notaDeCataBodega": "Vino B2 es un vino tinto robusto y con carácter."}
-        ]
-      }
-    ]
   }
+  
 ]
