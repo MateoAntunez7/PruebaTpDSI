@@ -6,13 +6,15 @@ import { LoginComponent } from './components/login/login.component'; // Asegúra
 import { DashAdminComponent } from './components/login/dash-admin/dash-admin.component';
 import { MenuBodegasComponent } from './components/menu-bodegas/menu-bodegas.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BodegaComponent } from './components/bodega/bodega.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashAdminComponent,
-    MenuBodegasComponent
+    MenuBodegasComponent,
+    BodegaComponent
   ],
   imports: [
     BrowserModule,
