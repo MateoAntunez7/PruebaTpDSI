@@ -46,6 +46,17 @@
         
         
             <br>
+            <h2>Vinos de la Actualización</h2>
+<ul *ngIf="vinosActualizacion">
+  <li *ngFor="let vino of vinosActualizacion">
+    <p>Nombre: {{ vino.nombre }}</p>
+    <p>Año: {{ vino.anio }}</p>
+    <p>Nota de Cata de la Bodega: {{ vino.nota_de_cata_bodega }}</p>
+    <p>Precio ARS: {{ vino.precio_ars }}</p>
+    <!-- Agrega más atributos según sea necesario -->
+  </li>
+</ul>
+<button (click)="actualizarVinos()">Actualizar</button>
             
         </main>
     </div>

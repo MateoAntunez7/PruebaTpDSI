@@ -1,16 +1,31 @@
-[
-  {
-    "id": 1,
-    "nombre": "Bodega A",
-    "actualizaciones": [
-      {
-        "fecha": "2024-05-01",
-        "vinos": [
-          {"nombre": "Vino A1", "tipo": "Tinto", "añada": 2020, "precioARS": 500, "notaDeCataBodega": "Vino A1 es un vino tinto intenso y afrutado."},
-          {"nombre": "Vino A2", "tipo": "Blanco", "añada": 2021, "precioARS": 450, "notaDeCataBodega": "Vino A2 es un vino blanco fresco y equilibrado."}
-        ]
-      }
-    ]
-  }
-  
-]
+{
+  "vinos": [
+    {
+      "id_vino": 1,
+      "anio": "2019",
+      "nombre": "Vino Tinto Reserva",
+      "nota_de_cata_bodega": "Este vino tinto de reserva tiene un sabor intenso y aromas a frutas maduras.",
+      "precio_ars": 1200,
+      "id_bodega": 1,
+      "id_varietal": 1
+    },
+    {
+      "id_vino": 2,
+      "anio": "2020",
+      "nombre": "Vino Blanco Joven",
+      "nota_de_cata_bodega": "Un vino blanco joven y refrescante, ideal para el verano.",
+      "precio_ars": 800,
+      "id_bodega": 1,
+      "id_varietal": 2
+    },
+    {
+      "id_vino": 3,
+      "anio": "2018",
+      "nombre": "Vino Rosado Semiseco",
+      "nota_de_cata_bodega": "Vino rosado semiseco con notas afrutadas y un toque de dulzura.",
+      "precio_ars": 1000,
+      "id_bodega": 1,
+      "id_varietal": 3
+    }
+  ]
+}
