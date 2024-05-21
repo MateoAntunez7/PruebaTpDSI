@@ -20,61 +20,33 @@
         </header>
         <!-- Main -->
         <main class="py-6 bg-surface-secondary">
-            <div class="container-fluid">
-                <h1 id="titulo" class="h2 mb-0 ls-tight">Datos de la bodega</h1>
-                <div *ngFor="let bodega of bodegaActual">
-                    <h2>{{ bodega.nombre }}</h2>
-                    <p>Id: {{ bodega.id }}</p>
-                    <p>Actualizaciones:</p>
-                    <ul>
-                      <li *ngFor="let actualizacion of bodega.actualizaciones">
-                        <p>Fecha: {{ actualizacion.fecha }}</p>
-                        <p>Vinos:</p>
-                        <ul>
-                          <li *ngFor="let vino of actualizacion.vinos">
-                            <p>Nombre: {{ vino.nombre }}</p>
-                            <p>Tipo: {{ vino.tipo }}</p>
-                            
-                            <p>Precio ARS: {{ vino.precioARS }}</p>
-                            <p>Nota de Cata de la Bodega: {{ vino.notaDeCataBodega }}</p>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                </div>
+          <div class="container-fluid">
+            <h1 class="h2 mb-4 ls-tight">Datos de la bodega</h1>
+            <div *ngIf="vinos.length > 0">
+                <!-- Verifica si hay vinos disponibles -->
+                <h2>Vinos de la bodega</h2>
+                <ul>
+                    <li *ngFor="let vino of vinos">
+                        <p>Nombre: {{ vino.nombre }}</p>
+                        <p>Nota de Cata de la Bodega: {{ vino.nota_de_cata_bodega }}</p>
+                        <p>id bodega: {{ vino.id_bodega }}</p>
+                        <p>id varietal: {{ vino.id_varietal }}</p>
+                        
+                        <p>Precio ARS: {{ vino.precio_ars }}</p>
+                        <p>año: {{ vino.anio }}</p>
+                    </li>
+                </ul>
             </div>
+            <div *ngIf="vinos.length === 0">
+                <!-- Si no hay vinos disponibles -->
+                <p>No hay vinos disponibles para esta bodega.</p>
+            </div>
+        </div>
+        
+        
+        
             <br>
-            <div class="container-fluid">
-                <h1 id="titulo" class="h2 mb-0 ls-tight">Datos de la actualización</h1>
-                <div *ngFor="let bodega of bodegas">
-                    <h2>{{ bodega.nombre }}</h2>
-                    <p>Id: {{ bodega.id }}</p>
-                    <p>Actualizaciones:</p>
-                    <ul>
-                      <li *ngFor="let actualizacion of bodega.actualizaciones">
-                        <p>Fecha: {{ actualizacion.fecha }}</p>
-                        <p>Vinos:</p>
-                        <ul>
-                          <li *ngFor="let vino of actualizacion.vinos">
-                            <p>Nombre: {{ vino.nombre }}</p>
-                            <p>Tipo: {{ vino.tipo }}</p>
-                            <p>Precio: {{ vino.precioARS }}</p>
-                            <p>Nota de Cata de la Bodega: {{ vino.notaDeCataBodega }}</p>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                </div>
-                <button (click)="actualizarBodegaActual()">
-                    <span>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2h6z"></path></svg> Actualizar
-                    </span>
-                </button>
-                <!-- Mensaje de éxito -->
-                <div *ngIf="mensajeExito" class="alert alert-success mt-3" role="alert">
-                    Se actualizó la bodega exitosamente.
-                </div>
-            </div>
+            
         </main>
     </div>
 </div>

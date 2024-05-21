@@ -24,7 +24,8 @@ export class MenuBodegasComponent implements OnInit {
     );
   }
 
-  irABodega() {
-    this.router.navigate(['/bodega']);
+  irABodega(bodegaId: number) {
+    this.router.navigate(['/bodega', bodegaId]);
   }
+  
 }

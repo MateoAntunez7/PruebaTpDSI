@@ -1,53 +1,43 @@
 import { Component, OnInit } from '@angular/core';
-import { BodegaService } from '../../services/bodega.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { VinoService } from '../../services/vino.service';
+import { Vino } from '../../models/vino.model';
 
 @Component({
-  selector: 'app-bodegas',
+  selector: 'app-bodega',
   templateUrl: './bodega.component.html',
   styleUrls: ['./bodega.component.css']
 })
 export class BodegaComponent implements OnInit {
+  vinos: Vino[] = [];
+  bodegaId: number | null = null;
 
-  bodegas: any[] = []; // Inicialización como arreglo vacío
-  bodegaActual: any[] = [
-    {
-      "id": 1,
-      "nombre": "Bodega A",
-      "actualizaciones": [
-        {
-          "fecha": "2024-05-01",
-          "vinos": [
-            {"nombre": "Vino A1", "tipo": "Tinto", "añada": 2020, "precioARS": 500, "notaDeCataBodega": "Vino A1 es un vino tinto intenso y afrutado."}
-          ]
-        }
-      ]
-    }
-  ];
-
-  mensajeExito: boolean = false; // Variable para controlar la visibilidad del mensaje
-
-  constructor(private bodegaService: BodegaService, private router: Router ) { }
+  constructor(
+    private route: ActivatedRoute,
+    private vinoService: VinoService
+  ) { }
 
   ngOnInit(): void {
-    this.getBodegas();
+    this.route.params.subscribe(params => {
+      this.bodegaId = +params['id'];
+      if (this.bodegaId) {
+        this.getVinosPorBodegaId(this.bodegaId);
+      }
+    });
+
+    // Inicializa la lista de vinos vacía
+    this.vinos = [];
   }
 
-  getBodegas(): void {
-    this.bodegaService.getBodegas()
-      .subscribe(bodegas => this.bodegas = bodegas);
-  }
-
-  actualizarBodegaActual(): void {
-    this.bodegaActual = this.bodegas;
-    this.mostrarMensajeExito();
-    
-  }
-
-  mostrarMensajeExito(): void {
-    this.mensajeExito = true;
-    setTimeout(() => {
-      this.mensajeExito = false;
-    }, 3000); // Oculta el mensaje después de 3 segundos
+  getVinosPorBodegaId(idBodega: number): void {
+    this.vinoService.getVinosPorBodegaId(idBodega)
+      .subscribe(
+        (vinos: Vino[]) => {
+          this.vinos = vinos;
+        },
+        (error) => {
+          console.error('Error fetching vinos', error);
+        }
+      );
   }
 }

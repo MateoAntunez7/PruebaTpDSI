@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard-admin', component: DashAdminComponent },
   { path: 'bodegas', component: MenuBodegasComponent },
-  { path: 'bodega', component: BodegaComponent },
+  { path: 'bodega/:id', component: BodegaComponent }, // Agrega esta ruta para aceptar un parámetro de ID
   // Otras rutas aquí...
 ];
 
